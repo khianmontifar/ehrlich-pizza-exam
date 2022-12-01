@@ -18,8 +18,8 @@ import java.time.LocalTime;
 @Table(name = "orders")
 public class Orders {
     @Id
-    @Column(name = "id")
-    private long id;
+    @Column(name = "order_id")
+    private long order_id;
 
     @Column(name = "date")
     private LocalDate date;

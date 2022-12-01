@@ -14,12 +14,10 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "pizza_types")
 public class PizzaTypes {
-    @Id
-    @Column(name = "id")
-    private long id;
 
-    @Column(name = "pizza_type")
-    private String pizzaType;
+    @Id
+    @Column(name = "pizza_type_id")
+    private String pizzaTypeId;
 
     @Column(name = "name")
     private String name;

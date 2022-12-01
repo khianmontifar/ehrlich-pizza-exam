@@ -16,15 +16,13 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "pizzas")
 public class Pizzas {
-    @Id
-    @Column(name = "id")
-    private long id;
 
-    @Column(name = "pizza")
-    private String pizza;
+    @Id
+    @Column(name = "pizza_id")
+    private String pizza_id;
 
     @Column(name = "pizza_type_id")
-    private long pizza_type_id;
+    private String pizza_type_id;
 
     @Column(name = "size")
     private String size;
