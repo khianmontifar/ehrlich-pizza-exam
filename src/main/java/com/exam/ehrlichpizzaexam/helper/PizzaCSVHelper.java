@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PizzaCSVHelper extends BaseCSVHelper{
+public class PizzaCSVHelper extends CSVHelper {
     public static List<Pizza> csvPizzas(InputStream is) {
         try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
              CSVParser csvParser = new CSVParser(fileReader,

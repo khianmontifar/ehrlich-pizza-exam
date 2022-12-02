@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderDetailsCSVHelper extends BaseCSVHelper{
+public class OrderDetailsCSVHelper extends CSVHelper {
     public static List<OrderDetail> csvOrders(InputStream is) {
         try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
              CSVParser csvParser = new CSVParser(fileReader,

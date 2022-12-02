@@ -14,7 +14,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderCSVHelper extends BaseCSVHelper{
+public class OrderCSVHelper extends CSVHelper {
     public static List<Order> csvOrders(InputStream is) {
         try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
              CSVParser csvParser = new CSVParser(fileReader,

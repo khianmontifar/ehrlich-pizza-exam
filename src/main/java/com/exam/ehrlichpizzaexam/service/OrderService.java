@@ -1,8 +1,11 @@
 package com.exam.ehrlichpizzaexam.service;
 
-import com.exam.ehrlichpizzaexam.helper.PizzaTypesCSVHelper;
-import com.exam.ehrlichpizzaexam.model.PizzaType;
-import com.exam.ehrlichpizzaexam.persistence.PizzaTypeRepository;
+import com.exam.ehrlichpizzaexam.helper.OrderCSVHelper;
+import com.exam.ehrlichpizzaexam.helper.PizzaCSVHelper;
+import com.exam.ehrlichpizzaexam.model.Order;
+import com.exam.ehrlichpizzaexam.model.Pizza;
+import com.exam.ehrlichpizzaexam.persistence.OrderRepository;
+import com.exam.ehrlichpizzaexam.persistence.PizzaRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,20 +16,20 @@ import java.util.List;
 
 @Service
 @Slf4j
-public class PizzaTypeService {
+public class OrderService {
     @Autowired
-    private PizzaTypeRepository repository;
+    private OrderRepository repository;
     public void save(MultipartFile file) {
-        log.info("Processing save for PizzaTypes");
+        log.info("Processing save for Order");
         try {
-            List<PizzaType> tutorials = PizzaTypesCSVHelper.csvPizzaTypes(file.getInputStream());
+            List<Order> tutorials = OrderCSVHelper.csvOrders(file.getInputStream());
             repository.saveAll(tutorials);
         } catch (IOException e) {
             throw new RuntimeException("fail to store csv data: " + e.getMessage());
         }
     }
 
-    public List<PizzaType> getAllPizzaType() {
+    public List<Order> getAllOrders() {
         return repository.findAll();
     }
 }

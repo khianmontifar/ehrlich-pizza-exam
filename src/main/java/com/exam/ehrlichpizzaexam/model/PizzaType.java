@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "pizza_types")
 public class PizzaType {
-
     @Id
     @Column(name = "pizza_type_id")
     private String pizzaTypeId;

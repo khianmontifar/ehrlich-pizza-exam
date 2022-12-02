@@ -1,6 +1,7 @@
 package com.exam.ehrlichpizzaexam.helper;
 
 import com.exam.ehrlichpizzaexam.model.PizzaType;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -11,9 +12,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-
-public class PizzaTypesCSVHelper extends BaseCSVHelper{
+@Slf4j
+public class PizzaTypesCSVHelper extends CSVHelper {
     public static List<PizzaType> csvPizzaTypes(InputStream is) {
+        log.info("Parsing PizzaTypes");
         try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
              CSVParser csvParser = new CSVParser(fileReader,
                      CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim());) {

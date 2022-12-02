@@ -2,7 +2,7 @@ package com.exam.ehrlichpizzaexam.helper;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class BaseCSVHelper {
+public class CSVHelper {
     public static String TYPE = "text/csv";
 
     public static boolean hasCSVFormat(MultipartFile file) {
