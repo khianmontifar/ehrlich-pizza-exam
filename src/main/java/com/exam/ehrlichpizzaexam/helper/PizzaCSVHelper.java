@@ -1,7 +1,6 @@
-package com.exam.ehrlichpizzaexam.helpers;
+package com.exam.ehrlichpizzaexam.helper;
 
-import com.exam.ehrlichpizzaexam.model.PizzaTypes;
-import com.exam.ehrlichpizzaexam.model.Pizzas;
+import com.exam.ehrlichpizzaexam.model.Pizza;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -15,17 +14,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PizzaCSVHelper extends BaseCSVHelper{
-    public static List<Pizzas> csvPizzas(InputStream is) {
+    public static List<Pizza> csvPizzas(InputStream is) {
         try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
              CSVParser csvParser = new CSVParser(fileReader,
                      CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim());) {
 
-            List<Pizzas> pizzas = new ArrayList<Pizzas>();
+            List<Pizza> pizzas = new ArrayList<Pizza>();
 
             Iterable<CSVRecord> csvRecords = csvParser.getRecords();
 
             for (CSVRecord csvRecord : csvRecords) {
-                Pizzas pizza = new Pizzas(
+                Pizza pizza = new Pizza(
                         csvRecord.get("pizza_id"),
                         csvRecord.get("pizza_type_id"),
                         csvRecord.get("size"),

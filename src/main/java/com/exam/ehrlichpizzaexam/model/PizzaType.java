@@ -8,22 +8,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "orders")
-public class Orders {
+@Table(name = "pizza_types")
+public class PizzaType {
+
     @Id
-    @Column(name = "order_id")
-    private long order_id;
+    @Column(name = "pizza_type_id")
+    private String pizzaTypeId;
 
-    @Column(name = "date")
-    private LocalDate date;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "time")
-    private LocalTime time;
+    @Column(name = "category")
+    private String category;
+
+    @Column(name = "ingredients")
+    private String ingredients;
 }

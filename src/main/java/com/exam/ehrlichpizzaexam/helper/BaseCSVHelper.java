@@ -1,4 +1,4 @@
-package com.exam.ehrlichpizzaexam.helpers;
+package com.exam.ehrlichpizzaexam.helper;
 
 import org.springframework.web.multipart.MultipartFile;
 

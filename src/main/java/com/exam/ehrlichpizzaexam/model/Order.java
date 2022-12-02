@@ -8,25 +8,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "pizzas")
-public class Pizzas {
-
+@Table(name = "orders")
+public class Order {
     @Id
-    @Column(name = "pizza_id")
-    private String pizza_id;
+    @Column(name = "order_id")
+    private long order_id;
 
-    @Column(name = "pizza_type_id")
-    private String pizza_type_id;
+    @Column(name = "date")
+    private LocalDate date;
 
-    @Column(name = "size")
-    private String size;
-
-    @Column(name = "price")
-    private BigDecimal price;
+    @Column(name = "time")
+    private LocalTime time;
 }

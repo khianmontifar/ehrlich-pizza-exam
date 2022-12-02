@@ -12,19 +12,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "pizza_types")
-public class PizzaTypes {
-
+@Table(name = "order_details")
+public class OrderDetail {
     @Id
-    @Column(name = "pizza_type_id")
-    private String pizzaTypeId;
+    @Column(name = "order_details_id")
+    private long order_details_id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "order_id")
+    private long order_id;
 
-    @Column(name = "category")
-    private String category;
+    @Column(name = "pizza_id")
+    private String pizza_id;
 
-    @Column(name = "ingredients")
-    private String ingredients;
+    @Column(name = "quantity")
+    private Integer quantity;
 }
