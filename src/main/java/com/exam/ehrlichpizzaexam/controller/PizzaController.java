@@ -1,3 +1,11 @@
+/**
+ * This controller provides endpoints to upload csv for pizza
+ * and display all uploaded data.
+ *
+ * @author  Christian Montifar
+ * @version 1.0
+ * @since   2022-12-02
+ */
 package com.exam.ehrlichpizzaexam.controller;
 
 import com.exam.ehrlichpizzaexam.helper.PizzaCSVHelper;
@@ -24,7 +32,10 @@ import java.util.List;
 public class PizzaController {
     @Autowired
     PizzaService pizzaService;
-
+    /**
+     * This is the endpoint for upload with RequestMethod POST
+     *
+     */
     @PostMapping("/upload")
     public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
         String message = "";
@@ -41,9 +52,5 @@ public class PizzaController {
         message = "Please upload a csv file!";
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseMessage(message));
     }
-//    @GetMapping("/pizzas")
-//    public List<Pizza> getAllPizzaTypes(){
-//        return pizzaService.getAllPizzas().forEach(a->a.);
-//    }
 
 }

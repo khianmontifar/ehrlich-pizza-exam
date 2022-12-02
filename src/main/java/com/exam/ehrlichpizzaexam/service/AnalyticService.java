@@ -1,3 +1,11 @@
+/**
+ * This services provides all the implementations for analytic-related
+ * processing
+ *
+ * @author  Christian Montifar
+ * @version 1.0
+ * @since   2022-12-02
+ */
 package com.exam.ehrlichpizzaexam.service;
 
 import com.exam.ehrlichpizzaexam.model.Order;
@@ -38,11 +46,16 @@ public class AnalyticService {
         Map<Object, Boolean> seen = new ConcurrentHashMap<>();
         return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
     }
+    /**
+     * This method process the ranking of pizza by popularity
+     *
+     */
     public Map<String, Integer> rankPizzaByPopularity(){
         return viewRepository.findAll().stream().collect(Collectors.groupingBy(PizzaOrdersView::getName,
                         Collectors.summingInt(PizzaOrdersView::getQuantity)));
 
     }
+
     public List<PizzaOrdersView> findByPopularity(){
         List<PizzaOrdersView> viewList = viewRepository.findAll();
         Map<String, Integer> map = viewList.stream()
@@ -54,6 +67,11 @@ public class AnalyticService {
                                 .thenComparing(PizzaOrdersView::getQuantity).reversed())
                 .collect(Collectors.toList());
     }
+    /**
+     * This method process the view for getting the popular dates with
+     * popular pizza
+     *
+     */
     public List<DatePizzaDTO> getPOpularPizzaByDate(){
         List<DatePizzaDTO> datePizzaDTOList = new ArrayList<>();
 

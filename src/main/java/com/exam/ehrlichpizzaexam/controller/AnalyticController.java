@@ -1,3 +1,11 @@
+/**
+ * This controller provides endpoints display all analytic-related
+ * data
+ *
+ * @author  Christian Montifar
+ * @version 1.0
+ * @since   2022-12-02
+ */
 package com.exam.ehrlichpizzaexam.controller;
 
 import com.exam.ehrlichpizzaexam.converters.PizzaRankConverter;
@@ -21,19 +29,29 @@ import java.util.Map;
 public class AnalyticController {
     @Autowired
     private AnalyticService service;
-
+    /**
+     * This is the endpoint for getting the most popular pizza by ranking
+     *
+     */
     @Autowired
     private PizzaOrderViewService pizzaOrderViewService;
     @GetMapping("/rankPizza")
     public List<PizzaRankDTO> getAllPizzaTypes(){
         return PizzaRankConverter.convertToPizzaRank(service.rankPizzaByPopularity());
     }
-
+    /**
+     * This is the endpoint for getting the most number of days with its most popular pizza
+     *
+     */
     @GetMapping("/popularPizzaByDate")
     public List<DatePizzaDTO> getAllPizzaByDate(){
         return service.getPOpularPizzaByDate();
     }
 
+    /**
+     * This is the endpoint for viewing all the data in the database
+     *
+     */
     @GetMapping("/all")
     public List<PizzaOrdersView> getAllPizzaOrders(){
         return pizzaOrderViewService.getAllOrders();

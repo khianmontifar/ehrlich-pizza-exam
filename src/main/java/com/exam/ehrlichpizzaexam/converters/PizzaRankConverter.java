@@ -1,3 +1,10 @@
+/**
+ * This is a converter or mapper for Pizza and its Rank
+ *
+ * @author  Christian Montifar
+ * @version 1.0
+ * @since   2022-12-02
+ */
 package com.exam.ehrlichpizzaexam.converters;
 
 import com.exam.ehrlichpizzaexam.model.dto.PizzaRankDTO;
