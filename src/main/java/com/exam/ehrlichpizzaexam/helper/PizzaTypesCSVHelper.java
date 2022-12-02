@@ -1,3 +1,10 @@
+/**
+ * This is the helper dedicated for PizzaType CSV
+ *
+ * @author  Christian Montifar
+ * @version 1.0
+ * @since   2022-12-02
+ */
 package com.exam.ehrlichpizzaexam.helper;
 
 import com.exam.ehrlichpizzaexam.model.PizzaType;
