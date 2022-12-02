@@ -29,7 +29,7 @@ public class PizzaService {
         }
     }
 
-    public List<Pizza> getAllPizzas() {
-        return repository.findAll();
-    }
+//    public Iterable<Pizza> getAllPizzas() {
+//        return repository.findAll();
+//    }
 }

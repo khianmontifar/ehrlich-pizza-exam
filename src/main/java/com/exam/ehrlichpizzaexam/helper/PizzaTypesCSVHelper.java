@@ -24,6 +24,7 @@ public class PizzaTypesCSVHelper extends CSVHelper {
 
             Iterable<CSVRecord> csvRecords = csvParser.getRecords();
 
+
             for (CSVRecord csvRecord : csvRecords) {
                 PizzaType pizzaType = new PizzaType(
                         csvRecord.get("pizza_type_id"),
@@ -31,6 +32,8 @@ public class PizzaTypesCSVHelper extends CSVHelper {
                         csvRecord.get("category"),
                         csvRecord.get("ingredients"));
                 pizzaTypes.add(pizzaType);
+
+
             }
 
             return pizzaTypes;

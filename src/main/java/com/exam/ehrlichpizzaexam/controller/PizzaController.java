@@ -41,9 +41,9 @@ public class PizzaController {
         message = "Please upload a csv file!";
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseMessage(message));
     }
-    @GetMapping("/pizzas")
-    public List<Pizza> getAllPizzaTypes(){
-        return pizzaService.getAllPizzas();
-    }
+//    @GetMapping("/pizzas")
+//    public List<Pizza> getAllPizzaTypes(){
+//        return pizzaService.getAllPizzas().forEach(a->a.);
+//    }
 
 }
